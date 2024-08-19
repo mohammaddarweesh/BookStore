@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "4eeec5e7-771f-4add-96b5-15177dc93d86",
+		"name": "BookStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13501804",
+		"_collection_link": "https://red-equinox-250353.postman.co/workspace/Team-Workspace~d868d688-761c-4c88-88f6-19e635c73168/collection/13501804-4eeec5e7-771f-4add-96b5-15177dc93d86?action=share&source=collection_link&creator=13501804"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"Mohammad\",\r\n    \"Email\": \"mhamadarweesh0@gmail.com\",\r\n    \"Password\": \"Test@123\",\r\n    \"ConfirmPassword\": \"Test@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bookstore}}/api/auth/register",
+							"host": [
+								"{{bookstore}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"mhamadarweesh0@gmail.com\",\r\n    \"Password\": \"Test@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bookstore}}/api/auth/login",
+							"host": [
+								"{{bookstore}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bookstore}}/api/auth/logout",
+							"host": [
+								"{{bookstore}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "GetBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bookstore}}/api/books",
+							"host": [
+								"{{bookstore}}"
+							],
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bookstore}}/api/books/2",
+							"host": [
+								"{{bookstore}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Title\": \"Book\",\r\n    \"Author\": \"Author\",\r\n    \"Genre\": 1,\r\n    \"Price\": 1.25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bookstore}}/api/books",
+							"host": [
+								"{{bookstore}}"
+							],
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 2,\r\n    \"Title\": \"Book2\",\r\n    \"Author\": \"Author2\",\r\n    \"Genre\": 5,\r\n    \"Price\": 2.25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bookstore}}/api/books",
+							"host": [
+								"{{bookstore}}"
+							],
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 2,\r\n    \"Title\": \"Book2\",\r\n    \"Author\": \"Author2\",\r\n    \"Genre\": 5,\r\n    \"Price\": 2.25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bookstore}}/api/books/1",
+							"host": [
+								"{{bookstore}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shopping Cart",
+			"item": [
+				{
+					"name": "Get Shopping Cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bookstore}}/api/shoppingcart",
+							"host": [
+								"{{bookstore}}"
+							],
+							"path": [
+								"api",
+								"shoppingcart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Item To Shopping Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"BookId\": 3,\r\n    \"Quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bookstore}}/api/shoppingcart/items",
+							"host": [
+								"{{bookstore}}"
+							],
+							"path": [
+								"api",
+								"shoppingcart",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Shopping Cart Item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"BookId\": 2,\r\n    \"Quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bookstore}}/api/shoppingcart/items/1",
+							"host": [
+								"{{bookstore}}"
+							],
+							"path": [
+								"api",
+								"shoppingcart",
+								"items",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear Shopping Cart Items",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"BookId\": 2,\r\n    \"Quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bookstore}}/api/shoppingcart/clear",
+							"host": [
+								"{{bookstore}}"
+							],
+							"path": [
+								"api",
+								"shoppingcart",
+								"clear"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get Check Out Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bookstore}}/api/orders/checkout",
+							"host": [
+								"{{bookstore}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Out",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"shippingAddress\": \"New Shiping Address\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bookstore}}/api/orders/checkout",
+							"host": [
+								"{{bookstore}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzMjNkYjhjMi1jNWUwLTQzZTctYjgzYi04N2QxNGIyMTYxNDUiLCJqdGkiOiJlM2EwMmViZS04Nzc1LTRlNWYtODM3NS0yZmZhNDhmNThjNWQiLCJleHAiOjE3MjQ2MTQwODN9.VuVQh5O4vY2slgOs74Px8kefuEARXwacSBg4AFUIu3I",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
